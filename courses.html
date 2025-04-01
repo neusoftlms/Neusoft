@@ -3,55 +3,65 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Course View | LearnHub</title>
+    <title>Courses | EduLMS</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/course-view.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>LearnHub</h1>
+            <div id="branding">
+                <h1><span class="highlight">Edu</span>LMS</h1>
+            </div>
             <nav>
-                <a href="index.html">Home</a>
-                <a href="courses.html">Courses</a>
-                <a href="dashboard.html">Dashboard</a>
-                <a href="#" id="logoutBtn">Logout</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li class="current"><a href="courses.html">Courses</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        <div id="courseHeader">
-            <h2 id="courseTitle"></h2>
-            <div class="course-meta">
-                <span id="courseInstructor"></span>
-                <span id="courseCategory"></span>
-            </div>
-            <div class="progress-container">
-                <div class="progress-bar">
-                    <div class="progress-fill" id="courseProgress"></div>
+    <section id="main">
+        <div class="container">
+            <article id="main-col">
+                <h1 class="page-title">Our Courses</h1>
+                <div class="course-categories">
+                    <button class="category-btn active" data-category="all">All Courses</button>
+                    <button class="category-btn" data-category="programming">Programming</button>
+                    <button class="category-btn" data-category="business">Business</button>
+                    <button class="category-btn" data-category="design">Design</button>
                 </div>
-                <span id="progressText">0% complete</span>
-            </div>
-        </div>
-        
-        <div class="course-content">
-            <div class="course-description">
-                <h3>About This Course</h3>
-                <p id="courseDescription"></p>
-            </div>
-            
-            <div class="lessons-container">
-                <h3>Lessons</h3>
-                <div id="lessonsList">
-                    <!-- Lessons will be loaded here -->
+                
+                <div id="course-list" class="course-list">
+                    <!-- Courses will be loaded here via JavaScript -->
                 </div>
-            </div>
-        </div>
-    </main>
+            </article>
 
-    <script src="js/storage.js"></script>
-    <script src="js/auth.js"></script>
-    <script src="js/course-view.js"></script>
+            <aside id="sidebar">
+                <div class="dark">
+                    <h3>Find Your Course</h3>
+                    <form class="course-search">
+                        <input type="text" placeholder="Search courses...">
+                        <button type="submit" class="button_1">Search</button>
+                    </form>
+                    <h3>Filter By</h3>
+                    <div class="filter-options">
+                        <label><input type="checkbox" name="filter" value="beginner"> Beginner</label>
+                        <label><input type="checkbox" name="filter" value="intermediate"> Intermediate</label>
+                        <label><input type="checkbox" name="filter" value="advanced"> Advanced</label>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <footer>
+        <p>EduLMS Learning Management System, Copyright &copy; 2023</p>
+    </footer>
+
+    <script src="js/courses.js"></script>
 </body>
 </html>
