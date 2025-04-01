@@ -3,41 +3,73 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register | LearnHub</title>
+    <title>Register | EduLMS</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <div class="auth-container">
-        <div class="auth-card">
-            <h2>Create an Account</h2>
-            <form id="registerForm">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
-                </div>
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" required>
-                </div>
-                <div class="form-group">
-                    <label for="role">Account Type</label>
-                    <select id="role" required>
-                        <option value="student">Student</option>
-                        <option value="instructor">Instructor</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-primary">Register</button>
-            </form>
-            <p class="auth-link">Already have an account? <a href="login.html">Login here</a></p>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Edu</span>LMS</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li class="current"><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
         </div>
-    </div>
+    </header>
 
-    <script src="js/storage.js"></script>
+    <section id="register">
+        <div class="container">
+            <div class="register-box">
+                <h1>Create Your Account</h1>
+                <form id="register-form">
+                    <div class="form-group">
+                        <label for="register-name">Full Name</label>
+                        <input type="text" id="register-name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-email">Email Address</label>
+                        <input type="email" id="register-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <input type="password" id="register-password" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-confirm">Confirm Password</label>
+                        <input type="password" id="register-confirm" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="register-role">I am a:</label>
+                        <select id="register-role">
+                            <option value="student">Student</option>
+                            <option value="instructor">Instructor</option>
+                        </select>
+                    </div>
+                    <div class="form-group terms">
+                        <label>
+                            <input type="checkbox" id="agree-terms" required> I agree to the <a href="#">Terms of Service</a> and <a href="#">Privacy Policy</a>
+                        </label>
+                    </div>
+                    <button type="submit" class="button_1">Create Account</button>
+                </form>
+                <div class="register-footer">
+                    <p>Already have an account? <a href="login.html">Login here</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>EduLMS Learning Management System, Copyright &copy; 2023</p>
+    </footer>
+
     <script src="js/auth.js"></script>
 </body>
 </html>
