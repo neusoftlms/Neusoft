@@ -3,30 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login | LearnHub</title>
+    <title>Login | EduLMS</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/auth.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
-    <div class="auth-container">
-        <div class="auth-card">
-            <h2>Login to LearnHub</h2>
-            <form id="loginForm">
-                <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" id="email" required>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Edu</span>LMS</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="login">
+        <div class="container">
+            <div class="login-box">
+                <h1>Login to Your Account</h1>
+                <form id="login-form">
+                    <div class="form-group">
+                        <label for="login-email">Email Address</label>
+                        <input type="email" id="login-email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="login-password">Password</label>
+                        <input type="password" id="login-password" required>
+                    </div>
+                    <div class="form-options">
+                        <label>
+                            <input type="checkbox" id="remember-me"> Remember me
+                        </label>
+                        <a href="#" id="forgot-password">Forgot password?</a>
+                    </div>
+                    <button type="submit" class="button_1">Login</button>
+                </form>
+                <div class="login-footer">
+                    <p>Don't have an account? <a href="register.html">Register here</a></p>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgot-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Reset Password</h2>
+            <form id="forgot-form">
                 <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" required>
+                    <label for="reset-email">Enter your email address:</label>
+                    <input type="email" id="reset-email" required>
                 </div>
-                <button type="submit" class="btn-primary">Login</button>
+                <button type="submit" class="button_1">Send Reset Link</button>
             </form>
-            <p class="auth-link">Don't have an account? <a href="register.html">Register here</a></p>
         </div>
     </div>
 
-    <script src="js/storage.js"></script>
+    <footer>
+        <p>EduLMS Learning Management System, Copyright &copy; 2023</p>
+    </footer>
+
     <script src="js/auth.js"></script>
 </body>
 </html>
