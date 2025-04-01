@@ -1,0 +1,69 @@
+/* Responsive Styles */
+@media (max-width: 768px) {
+    header #branding,
+    header nav,
+    header nav li,
+    #newsletter h1,
+    #newsletter form,
+    #boxes .box,
+    #main-col,
+    #sidebar {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+    
+    header {
+        padding-bottom: 20px;
+    }
+    
+    #showcase h1 {
+        margin-top: 40px;
+        font-size: 36px;
+    }
+    
+    #newsletter button, 
+    #newsletter input[type="email"] {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    
+    .login-box, .register-box {
+        padding: 15px;
+    }
+    
+    .modal-content {
+        width: 95%;
+        margin: 20% auto;
+    }
+    
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .course-list {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        width: 95%;
+    }
+    
+    #showcase h1 {
+        font-size: 28px;
+    }
+    
+    #showcase p {
+        font-size: 16px;
+    }
+    
+    .form-options {
+        flex-direction: column;
+    }
+    
+    .form-options a {
+        margin-top: 10px;
+    }
+}
