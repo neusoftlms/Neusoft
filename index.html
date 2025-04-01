@@ -1,35 +1,53 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Learning Site</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnHub - Home</title>
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Learning Site</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="courses.html">Courses</a>
-            <a href="dashboard.html">My Dashboard</a>
-        </nav>
+        <div class="container">
+            <h1>LearnHub</h1>
+            <nav>
+                <a href="index.html" class="active">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="admin.html">Admin</a>
+            </nav>
+        </div>
     </header>
 
-    <main>
+    <main class="container">
         <section class="hero">
-            <h2>Start Learning Today</h2>
-            <p>Browse our courses and begin your learning journey</p>
+            <h2>Welcome to Your Learning Platform</h2>
+            <p>Start your educational journey today</p>
+            <a href="courses.html" class="btn">Browse Courses</a>
         </section>
 
-        <section class="course-list">
-            <h3>Featured Courses</h3>
-            <div id="featured-courses"></div>
+        <section class="features">
+            <div class="feature-card">
+                <h3>100+ Courses</h3>
+                <p>From beginner to advanced levels</p>
+            </div>
+            <div class="feature-card">
+                <h3>Expert Instructors</h3>
+                <p>Learn from industry professionals</p>
+            </div>
+            <div class="feature-card">
+                <h3>Track Progress</h3>
+                <p>Monitor your learning journey</p>
+            </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2023 My Learning Site</p>
+        <div class="container">
+            <p>&copy; 2023 LearnHub. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <script src="js/script.js"></script>
 </body>
 </html>
