@@ -1,1 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details | EduLMS</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Edu</span>LMS</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
+    <section id="main">
+        <div class="container">
+            <article id="main-col">
+                <div class="course-header">
+                    <h1 id="course-title" class="page-title">Course Title</h1>
+                    <div class="course-meta">
+                        <span class="instructor">Instructor: <span id="course-instructor">John Doe</span></span>
+                        <span class="category">Category: <span id="course-category">Programming</span></span>
+                        <span class="level">Level: <span id="course-level">Beginner</span></span>
+                    </div>
+                </div>
+                
+                <div class="course-content">
+                    <div class="course-image">
+                        <img id="course-image" src="images/course-placeholder.jpg" alt="Course Image">
+                    </div>
+                    <div class="course-description">
+                        <h3>About This Course</h3>
+                        <p id="course-description">Course description will be loaded here...</p>
+                        
+                        <div class="course-actions">
+                            <button id="enroll-btn" class="button_1">Enroll Now</button>
+                            <button id="wishlist-btn" class="button_2">Add to Wishlist</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="course-curriculum">
+                    <h3>Course Curriculum</h3>
+                    <div id="course-modules" class="modules">
+                        <!-- Modules will be loaded here via JavaScript -->
+                    </div>
+                </div>
+            </article>
+
+            <aside id="sidebar">
+                <div class="dark">
+                    <h3>Course Details</h3>
+                    <ul class="course-info">
+                        <li><strong>Duration:</strong> <span id="course-duration">4 weeks</span></li>
+                        <li><strong>Lectures:</strong> <span id="course-lectures">20</span></li>
+                        <li><strong>Quizzes:</strong> <span id="course-quizzes">5</span></li>
+                        <li><strong>Students:</strong> <span id="course-students">150</span></li>
+                        <li><strong>Language:</strong> <span id="course-language">English</span></li>
+                        <li><strong>Certificate:</strong> <span id="course-certificate">Yes</span></li>
+                    </ul>
+                </div>
+                
+                <div class="instructor-profile">
+                    <h3>About Instructor</h3>
+                    <div class="instructor-details">
+                        <img id="instructor-image" src="images/instructor-placeholder.jpg" alt="Instructor">
+                        <h4 id="instructor-name">John Doe</h4>
+                        <p id="instructor-bio">Instructor bio will be loaded here...</p>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <footer>
+        <p>EduLMS Learning Management System, Copyright &copy; 2023</p>
+    </footer>
+
+    <script src="js/courses.js"></script>
+</body>
+</html>
