@@ -3,33 +3,68 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Learning Site</title>
+    <title>Neusoft LMS </title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <header>
-        <h1>Welcome to My Learning Site</h1>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="courses.html">Courses</a>
-            <a href="dashboard.html">My Dashboard</a>
-        </nav>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Edu</span>LMS</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li class="current"><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="register.html">Register</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main>
-        <section class="hero">
-            <h2>Start Learning Today</h2>
-            <p>Browse our courses and begin your learning journey</p>
-        </section>
+    <section id="showcase">
+        <div class="container">
+            <h1>Advance Your Career With Our Courses</h1>
+            <p>Learn from industry experts at your own pace</p>
+        </div>
+    </section>
 
-        <section class="courses">
-            <h3>Featured Courses</h3>
-            <!-- Course cards will go here -->
-        </section>
-    </main>
+    <section id="newsletter">
+        <div class="container">
+            <h1>Subscribe To Our Newsletter</h1>
+            <form id="newsletter-form">
+                <input type="email" placeholder="Enter Email...">
+                <button type="submit" class="button_1">Subscribe</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="boxes">
+        <div class="container">
+            <div class="box">
+                <img src="images/course-icon.png" alt="Courses">
+                <h3>100+ Courses</h3>
+                <p>Choose from a wide variety of courses across multiple disciplines</p>
+            </div>
+            <div class="box">
+                <img src="images/expert-icon.png" alt="Experts">
+                <h3>Expert Instructors</h3>
+                <p>Learn from industry professionals with real-world experience</p>
+            </div>
+            <div class="box">
+                <img src="images/certificate-icon.png" alt="Certificate">
+                <h3>Certification</h3>
+                <p>Earn certificates to showcase your new skills</p>
+            </div>
+        </div>
+    </section>
 
     <footer>
-        <p>&copy; 2023 My Learning Site</p>
+        <p>Neusoft LMS, Copyright &copy; 2023</p>
     </footer>
+
+    <script src="js/main.js"></script>
 </body>
 </html>
