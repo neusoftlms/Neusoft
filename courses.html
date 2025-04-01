@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course View | LearnHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/course-view.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>LearnHub</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div id="courseHeader">
+            <h2 id="courseTitle"></h2>
+            <div class="course-meta">
+                <span id="courseInstructor"></span>
+                <span id="courseCategory"></span>
+            </div>
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="courseProgress"></div>
+                </div>
+                <span id="progressText">0% complete</span>
+            </div>
+        </div>
+        
+        <div class="course-content">
+            <div class="course-description">
+                <h3>About This Course</h3>
+                <p id="courseDescription"></p>
+            </div>
+            
+            <div class="lessons-container">
+                <h3>Lessons</h3>
+                <div id="lessonsList">
+                    <!-- Lessons will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/course-view.js"></script>
+</body>
+</html>

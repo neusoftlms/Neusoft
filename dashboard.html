@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Dashboard | LearnHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>LearnHub</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="courses.html">Courses</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="dashboard-header">
+            <h2>Welcome back, <span id="username"></span>!</h2>
+            <div class="stats">
+                <div class="stat-card">
+                    <h3>Enrolled Courses</h3>
+                    <p id="enrolledCount">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Completed Lessons</h3>
+                    <p id="completedLessons">0</p>
+                </div>
+                <div class="stat-card">
+                    <h3>Overall Progress</h3>
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="overallProgress"></div>
+                    </div>
+                    <p id="progressPercent">0%</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="dashboard-courses">
+            <h3>My Courses</h3>
+            <div id="enrolledCourses">
+                <!-- Enrolled courses will be loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+</html>

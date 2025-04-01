@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel | LearnHub</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>LearnHub Admin</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="admin.html" class="active">Admin</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="#" id="logoutBtn">Logout</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <section class="admin-section">
+            <h2>Course Management</h2>
+            
+            <div class="admin-card">
+                <h3>Add New Course</h3>
+                <form id="courseForm">
+                    <div class="form-group">
+                        <label for="courseTitle">Title:</label>
+                        <input type="text" id="courseTitle" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="courseDesc">Description:</label>
+                        <textarea id="courseDesc" required></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="courseInstructor">Instructor:</label>
+                        <input type="text" id="courseInstructor" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="courseCategory">Category:</label>
+                        <select id="courseCategory" required>
+                            <option value="technology">Technology</option>
+                            <option value="business">Business</option>
+                            <option value="design">Design</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="courseThumbnail">Thumbnail URL:</label>
+                        <input type="text" id="courseThumbnail" placeholder="https://example.com/image.jpg">
+                    </div>
+                    
+                    <div class="form-group">
+                        <h4>Lessons</h4>
+                        <div id="lessonContainer">
+                            <div class="lesson-item">
+                                <input type="text" placeholder="Lesson title" class="lesson-title">
+                                <input type="number" placeholder="Duration (minutes)" class="lesson-duration">
+                                <button type="button" class="remove-lesson">×</button>
+                            </div>
+                        </div>
+                        <button type="button" id="addLessonBtn" class="btn-secondary">Add Lesson</button>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Add Course</button>
+                </form>
+            </div>
+            
+            <div class="admin-card">
+                <h3>Existing Courses</h3>
+                <div id="coursesList">
+                    <!-- Courses will be listed here -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>
