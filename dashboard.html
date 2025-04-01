@@ -3,55 +3,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Dashboard | LearnHub</title>
+    <title>My Dashboard | EduLMS</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>LearnHub</h1>
+            <div id="branding">
+                <h1><span class="highlight">Edu</span>LMS</h1>
+            </div>
             <nav>
-                <a href="index.html">Home</a>
-                <a href="courses.html">Courses</a>
-                <a href="dashboard.html" class="active">Dashboard</a>
-                <a href="#" id="logoutBtn">Logout</a>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li class="current"><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#" id="logout-btn">Logout</a></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <main class="container">
-        <section class="dashboard-header">
-            <h2>Welcome back, <span id="username"></span>!</h2>
-            <div class="stats">
-                <div class="stat-card">
-                    <h3>Enrolled Courses</h3>
-                    <p id="enrolledCount">0</p>
-                </div>
-                <div class="stat-card">
-                    <h3>Completed Lessons</h3>
-                    <p id="completedLessons">0</p>
-                </div>
-                <div class="stat-card">
-                    <h3>Overall Progress</h3>
-                    <div class="progress-bar">
-                        <div class="progress-fill" id="overallProgress"></div>
+    <section id="main">
+        <div class="container">
+            <article id="main-col">
+                <h1 class="page-title">My Dashboard</h1>
+                
+                <div class="dashboard-section">
+                    <h2>My Courses</h2>
+                    <div id="enrolled-courses" class="course-list">
+                        <!-- Enrolled courses will be loaded here -->
                     </div>
-                    <p id="progressPercent">0%</p>
                 </div>
-            </div>
-        </section>
-        
-        <section class="dashboard-courses">
-            <h3>My Courses</h3>
-            <div id="enrolledCourses">
-                <!-- Enrolled courses will be loaded here -->
-            </div>
-        </section>
-    </main>
+                
+                <div class="dashboard-section">
+                    <h2>Course Progress</h2>
+                    <div id="progress-chart" class="progress-container">
+                        <!-- Progress chart will be loaded here -->
+                    </div>
+                </div>
+                
+                <div class="dashboard-section">
+                    <h2>Recent Activity</h2>
+                    <div id="recent-activity" class="activity-feed">
+                        <!-- Activity feed will be loaded here -->
+                    </div>
+                </div>
+            </article>
 
-    <script src="js/storage.js"></script>
+            <aside id="sidebar">
+                <div class="dark">
+                    <h3>My Profile</h3>
+                    <div class="profile-info">
+                        <img id="user-avatar" src="images/avatar-placeholder.png" alt="User Avatar">
+                        <h4 id="user-name">John Student</h4>
+                        <p id="user-email">john@example.com</p>
+                    </div>
+                    
+                    <h3>Statistics</h3>
+                    <ul class="user-stats">
+                        <li><strong>Enrolled Courses:</strong> <span id="stats-courses">5</span></li>
+                        <li><strong>Completed Courses:</strong> <span id="stats-completed">2</span></li>
+                        <li><strong>Certificates:</strong> <span id="stats-certificates">2</span></li>
+                        <li><strong>Total Learning Hours:</strong> <span id="stats-hours">45</span></li>
+                    </ul>
+                </div>
+                
+                <div class="upcoming-deadlines">
+                    <h3>Upcoming Deadlines</h3>
+                    <div id="deadlines-list">
+                        <!-- Deadlines will be loaded here -->
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </section>
+
+    <footer>
+        <p>EduLMS Learning Management System, Copyright &copy; 2023</p>
+    </footer>
+
     <script src="js/auth.js"></script>
-    <script src="js/dashboard.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>
