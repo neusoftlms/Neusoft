@@ -644,3 +644,51 @@ footer {
 .close:hover {
     color: black;
 }
+/* Quick Login Styles */
+.quick-login {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    max-width: 400px;
+    margin: 30px auto 0;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.quick-login h3 {
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+#quick-login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+#quick-login-form input {
+    padding: 10px;
+    border: 1px solid var(--light-color);
+    border-radius: 4px;
+}
+
+.full-login-link {
+    text-align: center;
+    display: block;
+    margin-top: 10px;
+    color: var(--primary-color);
+    font-size: 0.9em;
+}
+
+.login-btn {
+    background: var(--primary-color);
+    padding: 5px 15px;
+    border-radius: 4px;
+    color: white !important;
+}
+
+@media (max-width: 768px) {
+    .quick-login {
+        margin: 20px 10px 0;
+    }
+}
