@@ -67,3 +67,92 @@
         margin-top: 10px;
     }
 }
+/* Responsive adjustments for tablets (768px and below) */
+@media (max-width: 768px) {
+    /* Header adjustments */
+    header #branding,
+    header nav,
+    header nav li {
+        float: none;
+        text-align: center;
+        width: 100%;
+    }
+
+    header nav {
+        margin-top: 20px;
+    }
+
+    /* Newsletter form */
+    #newsletter h1,
+    #newsletter form {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+
+    #newsletter button {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    /* Course grid adjustments */
+    .course-list {
+        grid-template-columns: 1fr;
+    }
+
+    /* Dashboard adjustments */
+    #main-col,
+    #sidebar {
+        float: none;
+        width: 100%;
+    }
+
+    /* Hide some elements on mobile */
+    .course-meta .instructor {
+        display: none;
+    }
+
+    /* Modal adjustments */
+    .modal-content {
+        width: 90%;
+        margin: 20% auto;
+    }
+}
+
+/* Mobile devices (480px and below) */
+@media (max-width: 480px) {
+    /* Showcase text adjustments */
+    #showcase h1 {
+        font-size: 28px;
+    }
+
+    #showcase p {
+        font-size: 16px;
+    }
+
+    /* Form adjustments */
+    .form-options {
+        flex-direction: column;
+    }
+
+    .form-options a {
+        margin-top: 10px;
+    }
+
+    /* Button adjustments */
+    .button_1, .button_2 {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+
+    /* Course card adjustments */
+    .course-card {
+        width: 100%;
+    }
+
+    /* Admin table adjustments */
+    .admin-table th, .admin-table td {
+        padding: 8px;
+        font-size: 12px;
+    }
+}
