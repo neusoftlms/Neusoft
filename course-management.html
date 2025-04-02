@@ -95,3 +95,43 @@
     <script src="../js/course-management.js"></script>
 </body>
 </html>
+const API_BASE = 'http://localhost:5000/api'; // Change to your backend URL
+
+async function loadCourses() {
+    try {
+        const response = await fetch(`${API_BASE}/courses`);
+        courses = await response.json();
+        renderCourses();
+    } catch (err) {
+        console.error('Error loading courses:', err);
+    }
+}
+
+async function handleCourseSubmit(e) {
+    e.preventDefault();
+    
+    const formData = new FormData();
+    formData.append('title', document.getElementById('course-title').value);
+    formData.append('category', document.getElementById('course-category').value);
+    formData.append('description', document.getElementById('course-description').value);
+    formData.append('image', document.getElementById('course-image').files[0]);
+    formData.append('content', document.getElementById('course-content').files[0]);
+
+    try {
+        const response = await fetch(`${API_BASE}/courses`, {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (response.ok) {
+            alert('Course created successfully!');
+            courseForm.reset();
+            loadCourses();
+        } else {
+            throw new Error('Failed to create course');
+        }
+    } catch (err) {
+        console.error('Error:', err);
+        alert('Error creating course');
+    }
+}
