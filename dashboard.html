@@ -87,13 +87,10 @@
     <script src="js/main.js"></script>
 </body>
 </html>
-// Update page titles
-document.title = "Neusoft LMS" + (document.title.split("-")[1] || "");
+<!-- Change this in header -->
+<div id="branding">
+    <h1><span class="highlight">Neusoft</span> LMS</h1>
+</div>
 
-// Update any dynamic text references
-const updateBranding = () => {
-    const brandingElements = document.querySelectorAll('.branding-text');
-    brandingElements.forEach(el => {
-        el.textContent = el.textContent.replace('EduLMS', 'Neusoft LMS');
-    });
-};
+<!-- Change this in footer -->
+<p>Neusoft Learning Management System, Copyright &copy; 2023</p>
