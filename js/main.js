@@ -547,3 +547,13 @@ function checkAuthState() {
         if (instructorLink) instructorLink.style.display = 'none';
     }
 }
+// Handle quick login form submission
+document.getElementById('quick-login-form')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const email = this.querySelector('input[type="email"]').value;
+    const password = this.querySelector('input[type="password"]').value;
+    
+    // Add your authentication logic here
+    console.log('Login attempt with:', email, password);
+    alert('Login functionality would be implemented here');
+});
