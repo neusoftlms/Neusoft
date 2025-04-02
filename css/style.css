@@ -692,3 +692,165 @@ footer {
         margin: 20px 10px 0;
     }
 }
+/* Login Page Styles */
+#login {
+    padding: 60px 0;
+    background: var(--light-color);
+}
+
+.login-container {
+    display: flex;
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--secondary-color);
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.login-branding {
+    flex: 1;
+    padding: 40px;
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.login-branding h2 {
+    margin: 20px 0 10px;
+    font-size: 28px;
+}
+
+.login-logo {
+    max-width: 120px;
+}
+
+.login-box {
+    flex: 1;
+    padding: 40px;
+}
+
+.login-box h1 {
+    margin-bottom: 30px;
+    color: var(--primary-color);
+}
+
+.social-login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.social-btn {
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    background: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    background: #f5f5f5;
+}
+
+.google-btn {
+    color: #DB4437;
+    border-color: #DB4437;
+}
+
+.microsoft-btn {
+    color: #0078D7;
+    border-color: #0078D7;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+    color: #777;
+}
+
+.divider::before, .divider::after {
+    content: "";
+    flex: 1;
+    border-bottom: 1px solid #ddd;
+}
+
+.divider span {
+    padding: 0 15px;
+}
+
+.input-with-icon {
+    position: relative;
+}
+
+.input-with-icon i {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+}
+
+.input-with-icon input {
+    width: 100%;
+    padding: 12px 12px 12px 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    color: #777;
+}
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px 0;
+}
+
+.login-submit {
+    width: 100%;
+    padding: 12px;
+    font-size: 16px;
+}
+
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    color: #666;
+}
+
+.register-link a {
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .login-container {
+        flex-direction: column;
+    }
+    
+    .login-branding {
+        padding: 30px 20px;
+    }
+    
+    .login-box {
+        padding: 30px 20px;
+    }
+}
