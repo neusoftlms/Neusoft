@@ -1,13 +1,13 @@
 /* Global Styles */
 :root {
     --primary-color: #185b9f;
-    --secondary-color: #ffffff;
-    --light-color: #dde1ef;
-    --dark-color: #333;
-    --success-color: #28a745;
+    --secondary-color: #dde1ef;
+    --accent-color: #28a745;
     --warning-color: #ffc107;
     --danger-color: #dc3545;
     --info-color: #17a2b8;
+    --dark-color: #333;
+    --light-color: #ffffff;
 }
 
 * {
@@ -17,19 +17,10 @@
 }
 
 body {
-    font-family: Arial, Verdana, sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
     color: var(--dark-color);
-    background: #5c5c5c;
-}
-
-a {
-    text-decoration: none;
-    color: var(--primary-color);
-}
-
-ul {
-    list-style: none;
+    background-color: var(--secondary-color);
 }
 
 .container {
@@ -38,45 +29,38 @@ ul {
     overflow: hidden;
 }
 
-/* Buttons */
-.button_1, .button_2 {
-    display: inline-block;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: all 0.3s ease;
+ul {
+    list-style: none;
 }
 
 .button_1 {
-    background: var(--secondary-color);
-    color: white;
+    height: 38px;
+    background: var(--primary-color);
+    border: 0;
+    padding: 0 20px;
+    color: var(--light-color);
+    cursor: pointer;
+    border-radius: 4px;
 }
 
 .button_1:hover {
-    background: #333;
-}
-
-.button_2 {
-    background: var(--primary-color);
-    color: white;
-}
-
-.button_2:hover {
-    background: #333;
+    background: #134b82;
 }
 
 /* Header */
 header {
     background: var(--primary-color);
-    color: white;
+    color: var(--light-color);
     padding: 20px 0;
-    border-bottom: var(--secondary-color) 3px solid;
+    min-height: 70px;
+    border-bottom: 3px solid var(--accent-color);
 }
 
 header a {
-    color: white;
+    color: var(--light-color);
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 16px;
 }
 
 header li {
@@ -98,21 +82,22 @@ header nav {
 }
 
 header .highlight, header .current a {
-    color: var(--secondary-color);
+    color: var(--accent-color);
     font-weight: bold;
 }
 
 header a:hover {
-    color: #cccccc;
+    color: var(--secondary-color);
     font-weight: bold;
 }
 
 /* Showcase */
 #showcase {
     min-height: 400px;
-    background: url('../images/showcase.jpg') no-repeat 0 -400px;
+    background: url('../images/showcase.jpg') no-repeat center center/cover;
     text-align: center;
-    color: white;
+    color: var(--light-color);
+    padding: 100px 0;
 }
 
 #showcase h1 {
@@ -128,7 +113,7 @@ header a:hover {
 /* Newsletter */
 #newsletter {
     padding: 15px;
-    color: white;
+    color: var(--light-color);
     background: var(--primary-color);
 }
 
@@ -168,1145 +153,175 @@ header a:hover {
     padding: 20px 0;
 }
 
+#main .container {
+    display: flex;
+}
+
 #main-col {
-    float: left;
-    width: 65%;
+    flex: 70%;
+    padding-right: 20px;
 }
 
 #sidebar {
-    float: right;
-    width: 30%;
-    margin-top: 10px;
-}
-
-.dark {
-    padding: 15px;
-    background: var(--primary-color);
-    color: white;
-    margin-bottom: 20px;
+    flex: 30%;
+    background: var(--light-color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
 .page-title {
     margin-bottom: 20px;
-    font-size: 30px;
+    font-size: 28px;
+    color: var(--primary-color);
 }
 
-/* Forms */
-.form-group {
+/* Auth Forms */
+.auth-form {
+    background: var(--light-color);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.auth-form div {
     margin-bottom: 15px;
 }
 
-.form-group label {
+.auth-form label {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
 }
 
-.form-group input[type="text"],
-.form-group input[type="email"],
-.form-group input[type="password"],
-.form-group select,
-.form-group textarea {
+.auth-form input {
     width: 100%;
     padding: 10px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 4px;
 }
 
-.form-group textarea {
-    resize: vertical;
-    min-height: 100px;
+.error-message {
+    color: var(--danger-color);
+    margin-top: 10px;
 }
 
-/* Login & Register */
-#login, #register {
-    padding: 40px 0;
-}
-
-.login-box, .register-box {
-    max-width: 500px;
-    margin: 0 auto;
+/* Dashboard Styles */
+.dashboard-section {
+    background: var(--light-color);
     padding: 20px;
-    background: white;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.login-box h1, .register-box h1 {
-    text-align: center;
     margin-bottom: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
 
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 15px;
-}
-
-.login-footer, .register-footer {
-    text-align: center;
-    margin-top: 20px;
-}
-
-/* Course List */
 .course-list {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
-    margin-top: 20px;
+    margin-top: 15px;
 }
 
 .course-card {
-    background: white;
+    border: 1px solid #ddd;
     border-radius: 5px;
     overflow: hidden;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s;
 }
 
 .course-card:hover {
     transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
 .course-card img {
     width: 100%;
-    height: 160px;
+    height: 150px;
     object-fit: cover;
 }
 
-.course-card .course-info {
+.course-info {
     padding: 15px;
 }
 
-.course-card h3 {
+.course-info h3 {
     margin-bottom: 10px;
+    color: var(--primary-color);
 }
 
-.course-card .course-meta {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    font-size: 14px;
-    color: #666;
-}
-
-.course-card .course-actions {
-    margin-top: 15px;
-}
-
-/* Dashboard */
-.dashboard-section {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
+.progress-bar {
+    height: 10px;
+    background: #eee;
     border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+    overflow: hidden;
 }
 
-.profile-info {
+.progress-completed {
+    height: 100%;
+    background: var(--accent-color);
+    width: 0%;
+    transition: width 0.5s;
+}
+
+.profile-widget {
     text-align: center;
     margin-bottom: 20px;
 }
 
-.profile-info img {
+.profile-avatar {
     width: 100px;
     height: 100px;
     border-radius: 50%;
     object-fit: cover;
     margin-bottom: 10px;
+    border: 3px solid var(--primary-color);
 }
 
-.user-stats li, .instructor-stats li {
-    margin-bottom: 10px;
+.profile-stats {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
 }
 
-/* Admin */
-.admin-section {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 20px;
-    margin: 20px 0;
-}
-
-.stat-card {
-    background: var(--light-color);
-    padding: 20px;
-    border-radius: 5px;
+.stat-item {
     text-align: center;
 }
 
-.stat-card h3 {
-    font-size: 16px;
-    margin-bottom: 10px;
-}
-
-.stat-card p {
+.stat-number {
+    display: block;
     font-size: 24px;
     font-weight: bold;
-    color: var(--secondary-color);
+    color: var(--primary-color);
 }
 
-.admin-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+.stat-label {
+    font-size: 14px;
+    color: #666;
 }
 
-.admin-table th, .admin-table td {
-    padding: 12px 15px;
-    text-align: left;
-    border-bottom: 1px solid #ddd;
+.notifications-widget ul {
+    margin-top: 10px;
 }
 
-.admin-table th {
-    background: var(--primary-color);
-    color: white;
+.notifications-widget li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
 }
 
-.admin-table tr:hover {
-    background: #f5f5f5;
-}
-
-/* Modal */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-}
-
-.modal-content {
-    background: white;
-    margin: 10% auto;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    border-radius: 5px;
-    position: relative;
-}
-
-.close {
-    position: absolute;
-    top: 10px;
-    right: 20px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
+.notifications-widget li:last-child {
+    border-bottom: none;
 }
 
 /* Footer */
 footer {
     padding: 20px;
     margin-top: 20px;
-    color: white;
-    background: var(--secondary-color);
-    text-align: center;
-    clear: both;
-}
-/* Updated CSS with Verdana/Arial fonts and new color palette */
-:root {
-    --primary-color: #185b9f;       /* Deep blue */
-    --secondary-color: #ffffff;     /* White */
-    --light-color: #dde1ef;         /* Light blue-gray */
-    --dark-color: #333;             /* Dark gray */
-    --success-color: #28a745;       /* Green */
-    --warning-color: #ffc107;       /* Yellow */
-    --danger-color: #dc3545;        /* Red */
-    --info-color: #17a2b8;          /* Teal */
-}
-
-/* Font Styles */
-body {
-    font-family: Verdana, Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--dark-color);
-    background: var(--light-color);
-}
-
-h1, h2, h3, h4, h5, h6 {
-    font-family: Arial, sans-serif;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-/* Header */
-header {
-    background: var(--primary-color);
-    color: var(--secondary-color);
-    border-bottom: 3px solid var(--info-color);
-}
-
-header a {
-    color: var(--secondary-color);
-}
-
-header .highlight, header .current a {
-    color: var(--secondary-color);
-    font-weight: bold;
-}
-
-/* Buttons */
-.button_1 {
-    background: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-.button_1:hover {
-    background: #12487d; /* Darker shade of primary */
-}
-
-.button_2 {
-    background: var(--info-color);
-    color: var(--secondary-color);
-}
-
-.button_2:hover {
-    background: #138496; /* Darker teal */
-}
-
-/* Course Cards */
-.course-card {
-    background: var(--secondary-color);
-    border: 1px solid var(--light-color);
-}
-
-.course-card:hover {
-    box-shadow: 0 5px 15px rgba(24, 91, 159, 0.1);
-}
-
-/* Progress Bars */
-.progress-bar {
-    background: var(--light-color);
-}
-
-.progress {
-    background: var(--primary-color);
-}
-
-/* Admin Panel */
-.admin-table th {
-    background: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-.stat-card {
-    background: var(--secondary-color);
-    border: 1px solid var(--light-color);
-}
-
-/* Forms */
-input, select, textarea {
-    border: 1px solid var(--light-color);
-    background: var(--secondary-color);
-}
-
-input:focus, select:focus, textarea:focus {
-    border-color: var(--primary-color);
-    outline: none;
-}
-
-/* Footer */
-footer {
-    background: var(--primary-color);
-    color: var(--secondary-color);
-}
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    body {
-        font-size: 14px;
-    }
-    
-    h1 {
-        font-size: 24px;
-    }
-}
-/* Update any specific branding styles if needed */
-#branding h1 {
-    /* Adjust spacing if needed for the new name */
-    letter-spacing: 0.5px;
-}
-/* Course Management Styles */
-.course-management {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-#course-form, #edit-course-form {
-    background: var(--secondary-color);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.form-group input[type="text"],
-.form-group input[type="file"],
-.form-group select,
-.form-group textarea {
-    width: 100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.course-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 20px;
-}
-
-.course-card {
-    background: var(--secondary-color);
-    border-radius: 5px;
-    overflow: hidden;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.course-header {
-    padding: 15px;
-}
-
-.course-header img {
-    width: 100%;
-    height: 160px;
-    object-fit: cover;
-}
-
-.course-actions {
-    padding: 15px;
-    display: flex;
-    gap: 10px;
-}
-
-.category {
-    display: inline-block;
-    background: var(--primary-color);
-    color: white;
-    padding: 3px 8px;
-    border-radius: 3px;
-    font-size: 12px;
-    margin-top: 10px;
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-}
-
-.modal-content {
-    background-color: var(--secondary-color);
-    margin: 10% auto;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 600px;
-}
-
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: black;
-}
-/* Quick Login Styles */
-.quick-login {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    border-radius: 5px;
-    max-width: 400px;
-    margin: 30px auto 0;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-.quick-login h3 {
-    color: var(--primary-color);
-    margin-bottom: 15px;
+    color: var(--light-color);
+    background-color: var(--primary-color);
     text-align: center;
 }
 
-#quick-login-form {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-}
-
-#quick-login-form input {
-    padding: 10px;
-    border: 1px solid var(--light-color);
-    border-radius: 4px;
-}
-
-.full-login-link {
-    text-align: center;
-    display: block;
-    margin-top: 10px;
-    color: var(--primary-color);
-    font-size: 0.9em;
-}
-
-.login-btn {
-    background: var(--primary-color);
-    padding: 5px 15px;
-    border-radius: 4px;
-    color: white !important;
-}
-
-@media (max-width: 768px) {
-    .quick-login {
-        margin: 20px 10px 0;
-    }
-}
-/* Login Page Styles */
-#login {
-    padding: 60px 0;
-    background: var(--light-color);
-}
-
-.login-container {
-    display: flex;
-    max-width: 1000px;
-    margin: 0 auto;
-    background: var(--secondary-color);
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-}
-
-.login-branding {
-    flex: 1;
-    padding: 40px;
-    background: var(--primary-color);
-    color: var(--secondary-color);
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-}
-
-.login-branding h2 {
-    margin: 20px 0 10px;
-    font-size: 28px;
-}
-
-.login-logo {
-    max-width: 120px;
-}
-
-.login-box {
-    flex: 1;
-    padding: 40px;
-}
-
-.login-box h1 {
-    margin-bottom: 30px;
-    color: var(--primary-color);
-}
-
-.input-with-icon {
-    position: relative;
-}
-
-.input-with-icon i {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #777;
-}
-
-.input-with-icon input {
-    width: 100%;
-    padding: 12px 12px 12px 40px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.toggle-password {
-    position: absolute;
-    right: 15px;
-    cursor: pointer;
-    color: #777;
-}
-
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 15px 0;
-}
-
-.login-submit {
-    width: 100%;
-    padding: 12px;
-    font-size: 16px;
-}
-
-.register-link {
-    text-align: center;
-    margin-top: 20px;
-    color: #666;
-}
-
-.register-link a {
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .login-container {
-        flex-direction: column;
-    }
-    
-    .login-branding {
-        padding: 30px 20px;
-    }
-    
-    .login-box {
-        padding: 30px 20px;
-    }
-}
-.error-message {
-    color: var(--danger-color);
-    font-size: 0.85rem;
-    margin-top: 5px;
-    display: none;
-}
-
-.input-with-icon input.error {
-    border-color: var(--danger-color);
-}
-.password-input-container {
-    position: relative;
-    display: flex;
-    align-items: center;
-}
-
-.password-input-container input {
-    width: 100%;
-    padding: 12px 40px 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.eye-toggle {
-    position: absolute;
-    right: 15px;
-    cursor: pointer;
-    color: #777;
-    padding: 0 5px;
-}
-
-/* Error states */
-.password-input-container input.error {
-    border-color: var(--danger-color);
-    padding-right: 40px; /* Ensure space for eye icon */
-}
-
-.error-message {
-    color: var(--danger-color);
-    font-size: 0.85rem;
-    margin-top: 5px;
-    display: none;
-}
-/* Login Page Styles */
-#login {
-    padding: 40px 0;
-}
-
-.login-box {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 30px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-
-.login-box h1 {
-    margin-bottom: 30px;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-.input-with-icon {
-    position: relative;
-}
-
-.input-with-icon i {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #777;
-}
-
-.input-with-icon input {
-    width: 100%;
-    padding: 12px 12px 12px 40px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.password-input-container {
-    position: relative;
-}
-
-.password-input-container input {
-    width: 100%;
-    padding: 12px 40px 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.eye-toggle {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #777;
-    padding: 0 5px;
-}
-
-.error-message {
-    color: var(--danger-color);
-    font-size: 0.85rem;
-    margin-top: 5px;
-    display: none;
-}
-
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    margin: 20px 0;
-}
-
-.login-footer {
-    text-align: center;
-    margin-top: 20px;
-    color: #666;
-}
-
-.login-footer a {
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.5);
-}
-
-.modal-content {
-    background-color: white;
-    margin: 15% auto;
-    padding: 20px;
-    border-radius: 5px;
-    width: 80%;
-    max-width: 500px;
-    position: relative;
-}
-
-.close {
-    color: #aaa;
-    position: absolute;
-    right: 20px;
-    top: 10px;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-
-.close:hover {
-    color: black;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .login-box {
-        padding: 20px;
-    }
-    
-    .form-options {
-        flex-direction: column;
-        gap: 10px;
-    }
-}
-/* Registration Page Styles */
-#register {
-    padding: 40px 0;
-}
-
-.register-box {
-    max-width: 600px;
-    margin: 0 auto;
-    padding: 30px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0,0,0,0.1);
-}
-
-.register-box h1 {
-    margin-bottom: 30px;
-    color: var(--primary-color);
-    text-align: center;
-}
-
-.input-with-icon {
-    position: absolute;
-}
-
-.input-with-icon i {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #777;
-}
-
-.input-with-icon input {
-    width: 100%;
-    padding: 12px 12px 12px 40px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.password-input-container {
-    position: relative;
-}
-
-.password-input-container input {
-    width: 100%;
-    padding: 12px 40px 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-}
-
-.eye-toggle {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #777;
-    padding: 0 5px;
-}
-
-.password-strength {
-    margin-top: 8px;
-}
-
-.strength-meter {
-    height: 4px;
-    width: 0;
-    background: #ff5252;
-    border-radius: 2px;
-    transition: all 0.3s ease;
-}
-
-.strength-text {
-    font-size: 0.85rem;
-    color: #666;
-    display: block;
-    margin-top: 5px;
-}
-
-#strength-value {
-    font-weight: bold;
-}
-
-.error-message {
-    color: var(--danger-color);
-    font-size: 0.85rem;
-    margin-top: 5px;
-    display: none;
-}
-
-.role-select {
-    width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: white;
-}
-
-.terms {
-    margin: 20px 0;
-}
-
-.terms label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.register-footer {
-    text-align: center;
-    margin-top: 20px;
-    color: #666;
-}
-
-.register-footer a {
-    color: var(--primary-color);
-    font-weight: bold;
-}
-
-/* Responsive Styles */
-@media (max-width: 768px) {
-    .register-box {
-        padding: 20px;
-    }
-}
-/* General Styles */
-:root {
-    --primary-color: #185b9f;
-    --secondary-color: #ffffff;
-    --light-color: #dde1ef;
-    --dark-color: #333;
-    --success-color: #28a745;
-    --warning-color: #ffc107;
-    --danger-color: #dc3545;
-    --info-color: #17a2b8;
-}
-
-body {
-    font-family: Verdana, Arial, sans-serif;
-    line-height: 1.6;
-    color: var(--dark-color);
-    background: var(--light-color);
-    margin: 0;
-    padding: 0;
-}
-
-.container {
-    width: 85%;
-    margin: auto;
-    overflow: hidden;
-}
-
-/* Header Styles */
-header {
-    background: var(--primary-color);
-    color: var(--secondary-color);
-    padding: 20px 0;
-    border-bottom: 3px solid var(--info-color);
-}
-
-#branding h1 {
-    margin: 0;
-    font-size: 1.8em;
-}
-
-.highlight {
-    color: var(--secondary-color);
-    font-weight: bold;
-}
-
-nav ul {
-    padding: 0;
-    margin: 0;
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-}
-
-nav li {
-    display: inline;
-    padding: 0 15px;
-}
-
-nav a {
-    color: var(--secondary-color);
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
-}
-
-nav a:hover, nav .current a {
-    color: var(--secondary-color);
-    opacity: 0.8;
-}
-
-/* Login Section Styles */
-#login {
-    padding: 60px 0;
-}
-
-.login-box {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 30px;
-    background: var(--secondary-color);
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-}
-
-.login-box h1 {
-    margin-bottom: 30px;
-    color: var(--primary-color);
-    text-align: center;
-    font-size: 1.8em;
-}
-
-/* Form Styles */
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
-}
-
-.input-with-icon {
-    position: relative;
-}
-
-.input-with-icon i {
-    position: absolute;
-    left: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #777;
-}
-
-.input-with-icon input {
-    width: 100%;
-    padding: 12px 12px 12px 40px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1em;
-}
-
-.password-input-container {
-    position: relative;
-}
-
-.password-input-container input {
-    width: 100%;
-    padding: 12px 40px 12px 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 1em;
-}
-
-.eye-toggle {
-    position: absolute;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    cursor: pointer;
-    color: #777;
-    padding: 0 5px;
-}
-
-.error-message {
-    color: var(--danger-color);
-    font-size: 0.85em;
-    margin-top: 5px;
-    display: none;
-}
-
-/* Form Options */
-.form-options {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px 0;
-}
-
-.form-options label {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-weight: normal;
-}
-
-#forgot-password {
-    color: var(--primary-color);
-    text-decoration: none;
-}
-
-#forgot-password:hover {
-    text-decoration: underline;
-}
-
-/* Button Styles */
-.button_1 {
-    display: inline-block;
-    padding: 12px 20px;
-    background: var(--primary-color);
-    color: var(--secondary-color);
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    font-weight: bold;
-    width: 100%;
-    transition: background 0.3s ease;
-}
-
-.button_1:hover {
-    background: #12487d;
-}
-
-/* Footer Styles */
-footer {
-    padding: 20px 0;
-    margin-top: 40px;
-    color: var(--secondary-color);
-    background: var(--primary-color);
-    text-align: center;
-}
-
-/* Modal Styles */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000
+/* Responsive styles in responsive.css */
