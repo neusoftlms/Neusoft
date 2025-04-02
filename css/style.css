@@ -415,3 +415,121 @@ footer {
     text-align: center;
     clear: both;
 }
+/* Updated CSS with Verdana/Arial fonts and new color palette */
+:root {
+    --primary-color: #185b9f;       /* Deep blue */
+    --secondary-color: #ffffff;     /* White */
+    --light-color: #dde1ef;         /* Light blue-gray */
+    --dark-color: #333;             /* Dark gray */
+    --success-color: #28a745;       /* Green */
+    --warning-color: #ffc107;       /* Yellow */
+    --danger-color: #dc3545;        /* Red */
+    --info-color: #17a2b8;          /* Teal */
+}
+
+/* Font Styles */
+body {
+    font-family: Verdana, Arial, sans-serif;
+    line-height: 1.6;
+    color: var(--dark-color);
+    background: var(--light-color);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: var(--primary-color);
+}
+
+/* Header */
+header {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+    border-bottom: 3px solid var(--info-color);
+}
+
+header a {
+    color: var(--secondary-color);
+}
+
+header .highlight, header .current a {
+    color: var(--secondary-color);
+    font-weight: bold;
+}
+
+/* Buttons */
+.button_1 {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.button_1:hover {
+    background: #12487d; /* Darker shade of primary */
+}
+
+.button_2 {
+    background: var(--info-color);
+    color: var(--secondary-color);
+}
+
+.button_2:hover {
+    background: #138496; /* Darker teal */
+}
+
+/* Course Cards */
+.course-card {
+    background: var(--secondary-color);
+    border: 1px solid var(--light-color);
+}
+
+.course-card:hover {
+    box-shadow: 0 5px 15px rgba(24, 91, 159, 0.1);
+}
+
+/* Progress Bars */
+.progress-bar {
+    background: var(--light-color);
+}
+
+.progress {
+    background: var(--primary-color);
+}
+
+/* Admin Panel */
+.admin-table th {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+.stat-card {
+    background: var(--secondary-color);
+    border: 1px solid var(--light-color);
+}
+
+/* Forms */
+input, select, textarea {
+    border: 1px solid var(--light-color);
+    background: var(--secondary-color);
+}
+
+input:focus, select:focus, textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Footer */
+footer {
+    background: var(--primary-color);
+    color: var(--secondary-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+    
+    h1 {
+        font-size: 24px;
+    }
+}
