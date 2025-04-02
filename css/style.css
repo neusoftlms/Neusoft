@@ -803,3 +803,13 @@ footer {
         padding: 30px 20px;
     }
 }
+.error-message {
+    color: var(--danger-color);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none;
+}
+
+.input-with-icon input.error {
+    border-color: var(--danger-color);
+}
