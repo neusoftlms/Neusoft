@@ -1002,7 +1002,7 @@ footer {
 }
 
 .input-with-icon i {
-    position: absolute;
+    position: relative;
     left: 15px;
     top: 50%;
     transform: translateY(-50%);
