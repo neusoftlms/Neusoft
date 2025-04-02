@@ -533,3 +533,8 @@ footer {
         font-size: 24px;
     }
 }
+/* Update any specific branding styles if needed */
+#branding h1 {
+    /* Adjust spacing if needed for the new name */
+    letter-spacing: 0.5px;
+}
