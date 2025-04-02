@@ -739,57 +739,6 @@ footer {
     color: var(--primary-color);
 }
 
-.social-login {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
-}
-
-.social-btn {
-    padding: 12px;
-    border-radius: 4px;
-    border: 1px solid #ddd;
-    background: var(--secondary-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-}
-
-.social-btn:hover {
-    background: #f5f5f5;
-}
-
-.google-btn {
-    color: #DB4437;
-    border-color: #DB4437;
-}
-
-.microsoft-btn {
-    color: #0078D7;
-    border-color: #0078D7;
-}
-
-.divider {
-    display: flex;
-    align-items: center;
-    margin: 20px 0;
-    color: #777;
-}
-
-.divider::before, .divider::after {
-    content: "";
-    flex: 1;
-    border-bottom: 1px solid #ddd;
-}
-
-.divider span {
-    padding: 0 15px;
-}
-
 .input-with-icon {
     position: relative;
 }
