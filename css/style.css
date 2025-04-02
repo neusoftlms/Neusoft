@@ -813,3 +813,36 @@ footer {
 .input-with-icon input.error {
     border-color: var(--danger-color);
 }
+.password-input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-input-container input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.eye-toggle {
+    position: absolute;
+    right: 15px;
+    cursor: pointer;
+    color: #777;
+    padding: 0 5px;
+}
+
+/* Error states */
+.password-input-container input.error {
+    border-color: var(--danger-color);
+    padding-right: 40px; /* Ensure space for eye icon */
+}
+
+.error-message {
+    color: var(--danger-color);
+    font-size: 0.85rem;
+    margin-top: 5px;
+    display: none;
+}
