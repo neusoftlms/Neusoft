@@ -97,3 +97,23 @@ function setupLogout() {
         });
     });
 }
+function setupLogout() {
+    const logoutButtons = document.querySelectorAll('#logout');
+    
+    logoutButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            console.log('Before logout - Token:', localStorage.getItem('token'));
+            console.log('Before logout - User:', localStorage.getItem('user'));
+            
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            
+            console.log('After logout - Token:', localStorage.getItem('token'));
+            console.log('After logout - User:', localStorage.getItem('user'));
+            
+            window.location.href = 'login.html';
+        });
+    });
+}
