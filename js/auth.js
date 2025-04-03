@@ -79,3 +79,21 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // ... rest of your code ...
 });
+function setupLogout() {
+    const logoutButtons = document.querySelectorAll('#logout');
+    
+    logoutButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (confirm('Are you sure you want to logout?')) {
+                // Clear authentication data
+                localStorage.removeItem('token');
+                localStorage.removeItem('user');
+                
+                // Redirect to login page
+                window.location.href = 'login.html';
+            }
+        });
+    });
+}
