@@ -1,0 +1,56 @@
+/* Mobile First Approach */
+@media (max-width: 767px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    nav ul {
+        flex-direction: column;
+        margin-top: 1rem;
+    }
+    
+    nav ul li {
+        margin: 0.5rem 0;
+    }
+    
+    .features .container {
+        grid-template-columns: 1fr;
+    }
+    
+    .course-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .admin-table {
+        display: block;
+        overflow-x: auto;
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .course-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1024px) {
+    .course-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+    
+    .dashboard-grid {
+        grid-template-columns: 2fr 1fr;
+    }
+}

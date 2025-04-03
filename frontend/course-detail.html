@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neusoft Academy - Course Details</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Neusoft Academy</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="course-detail">
+        <div class="container">
+            <div class="course-header" id="courseHeader">
+                <div class="loading">Loading course details...</div>
+            </div>
+            
+            <div class="course-content">
+                <div class="course-actions">
+                    <button id="enrollBtn" class="btn btn-primary">Enroll Now</button>
+                    <div id="enrollmentStatus" class="hidden"></div>
+                </div>
+                
+                <div class="course-tabs">
+                    <button class="tab-btn active" data-tab="overview">Overview</button>
+                    <button class="tab-btn" data-tab="curriculum">Curriculum</button>
+                    <button class="tab-btn" data-tab="instructor">Instructor</button>
+                </div>
+                
+                <div class="tab-content active" id="overview">
+                    <h3>About This Course</h3>
+                    <div id="courseDescription"></div>
+                </div>
+                
+                <div class="tab-content" id="curriculum">
+                    <h3>Course Content</h3>
+                    <div class="content-list" id="contentList">
+                        <!-- Content will be loaded dynamically -->
+                    </div>
+                </div>
+                
+                <div class="tab-content" id="instructor">
+                    <h3>About the Instructor</h3>
+                    <div id="instructorInfo"></div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Neusoft Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/student.js"></script>
+</body>
+</html>

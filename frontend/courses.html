@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neusoft Academy - Courses</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Neusoft Academy</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html" class="active">Courses</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="course-catalog">
+        <div class="container">
+            <h2>Course Catalog</h2>
+            
+            <div class="category-filter">
+                <button class="btn btn-small active" data-category="all">All</button>
+                <button class="btn btn-small" data-category="programming">Programming</button>
+                <button class="btn btn-small" data-category="design">Design</button>
+                <button class="btn btn-small" data-category="business">Business</button>
+            </div>
+            
+            <div class="course-grid" id="courseList">
+                <!-- Courses will be loaded dynamically from API -->
+                <div class="loading">Loading courses...</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Neusoft Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/student.js"></script>
+</body>
+</html>

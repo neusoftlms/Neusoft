@@ -1,0 +1,137 @@
+<!-- course-management.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Management | Neusoft LMS</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div id="branding">
+                <h1><span class="highlight">Neusoft</span> LMS</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li class="current"><a href="course-management.html">Course Management</a></li>
+                    <li><a href="#" id="logout-btn">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section id="main">
+        <div class="container">
+            <article id="main-col">
+                <h1 class="page-title">Course Management</h1>
+                
+                <div class="admin-section">
+                    <h2>Create New Course</h2>
+                    <form id="course-form" enctype="multipart/form-data">
+                        <div class="form-group">
+                            <label for="course-title">Course Title*</label>
+                            <input type="text" id="course-title" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="course-category">Category*</label>
+                            <select id="course-category" required>
+                                <option value="">Select Category</option>
+                                <option value="programming">Programming</option>
+                                <option value="business">Business</option>
+                                <option value="design">Design</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="course-description">Description*</label>
+                            <textarea id="course-description" rows="5" required></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="course-image">Thumbnail Image*</label>
+                            <input type="file" id="course-image" accept="image/*" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="course-content">Course Materials (ZIP)*</label>
+                            <input type="file" id="course-content" accept=".zip,.rar" required>
+                        </div>
+                        
+                        <button type="submit" class="button_1">Create Course</button>
+                    </form>
+                </div>
+                
+                <div class="admin-section">
+                    <h2>Existing Courses</h2>
+                    <div id="course-list" class="course-list">
+                        <!-- Courses will be loaded here -->
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Edit Course Modal -->
+    <div id="edit-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Edit Course</h2>
+            <form id="edit-course-form">
+                <!-- Fields will be populated by JS -->
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Neusoft Learning Management System, Copyright &copy; 2023</p>
+    </footer>
+
+    <script src="../js/course-management.js"></script>
+</body>
+</html>
+const API_BASE = 'http://localhost:5000/api'; // Change to your backend URL
+
+async function loadCourses() {
+    try {
+        const response = await fetch(`${API_BASE}/courses`);
+        courses = await response.json();
+        renderCourses();
+    } catch (err) {
+        console.error('Error loading courses:', err);
+    }
+}
+
+async function handleCourseSubmit(e) {
+    e.preventDefault();
+    
+    const formData = new FormData();
+    formData.append('title', document.getElementById('course-title').value);
+    formData.append('category', document.getElementById('course-category').value);
+    formData.append('description', document.getElementById('course-description').value);
+    formData.append('image', document.getElementById('course-image').files[0]);
+    formData.append('content', document.getElementById('course-content').files[0]);
+
+    try {
+        const response = await fetch(`${API_BASE}/courses`, {
+            method: 'POST',
+            body: formData
+        });
+        
+        if (response.ok) {
+            alert('Course created successfully!');
+            courseForm.reset();
+            loadCourses();
+        } else {
+            throw new Error('Failed to create course');
+        }
+    } catch (err) {
+        console.error('Error:', err);
+        alert('Error creating course');
+    }
+}

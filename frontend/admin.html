@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neusoft Academy - Admin Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Neusoft Academy</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="admin.html" class="active">Admin Panel</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="admin-panel">
+        <div class="container">
+            <h2>Admin Dashboard</h2>
+            
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="users">User Management</button>
+                <button class="tab-btn" data-tab="courses">Course Management</button>
+                <button class="tab-btn" data-tab="reports">Reports</button>
+            </div>
+            
+            <div class="tab-content active" id="users">
+                <h3>User Management</h3>
+                <button class="btn btn-primary" id="addUserBtn">Add New User</button>
+                
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>john@example.com</td>
+                            <td>Student</td>
+                            <td>
+                                <button class="btn btn-small">Edit</button>
+                                <button class="btn btn-small btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- More users would go here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="tab-content" id="courses">
+                <h3>Course Management</h3>
+                <button class="btn btn-primary" id="addCourseBtn">Add New Course</button>
+                
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Course Name</th>
+                            <th>Instructor</th>
+                            <th>Enrollments</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>Introduction to Programming</td>
+                            <td>Jane Smith</td>
+                            <td>45</td>
+                            <td>
+                                <button class="btn btn-small">Edit</button>
+                                <button class="btn btn-small btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- More courses would go here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Neusoft Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
+<!-- In all protected pages -->
+<li><a href="#" id="logout">Logout</a></li>

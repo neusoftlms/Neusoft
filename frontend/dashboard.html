@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neusoft Academy - Dashboard</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Neusoft Academy</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="courses.html">Courses</a></li>
+                    <li><a href="dashboard.html" class="active">Dashboard</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="dashboard">
+        <div class="container">
+            <h2>My Learning Dashboard</h2>
+            
+            <div class="dashboard-grid">
+                <section class="enrolled-courses">
+                    <h3>My Courses</h3>
+                    <div class="course-card">
+                        <h4>Introduction to Programming</h4>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 65%"></div>
+                        </div>
+                        <p>65% Complete</p>
+                        <a href="#" class="btn btn-secondary">Continue Learning</a>
+                    </div>
+                    <!-- More course cards would go here -->
+                </section>
+                
+                <section class="progress-summary">
+                    <h3>Learning Progress</h3>
+                    <div class="stats">
+                        <div class="stat-box">
+                            <h4>Courses Enrolled</h4>
+                            <p>3</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>Courses Completed</h4>
+                            <p>1</p>
+                        </div>
+                        <div class="stat-box">
+                            <h4>Certificates</h4>
+                            <p>1</p>
+                            <a href="#" class="btn btn-small">View</a>
+                        </div>
+                    </div>
+                </section>
+                
+                <section class="recommendations">
+                    <h3>Recommended Courses</h3>
+                    <div class="course-list">
+                        <!-- Recommended courses would go here -->
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Neusoft Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/student.js"></script>
+</body>
+</html>
+<!-- In all protected pages -->
+<li><a href="#" id="logout">Logout</a></li>

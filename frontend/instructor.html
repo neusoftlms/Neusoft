@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Neusoft Academy - Instructor Panel</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/admin.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>Neusoft Academy</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="instructor.html" class="active">Instructor Panel</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="instructor-panel">
+        <div class="container">
+            <h2>Instructor Dashboard</h2>
+            
+            <div class="instructor-tabs">
+                <button class="tab-btn active" data-tab="my-courses">My Courses</button>
+                <button class="tab-btn" data-tab="create-course">Create Course</button>
+                <button class="tab-btn" data-tab="students">My Students</button>
+            </div>
+            
+            <div class="tab-content active" id="my-courses">
+                <h3>My Courses</h3>
+                <button class="btn btn-primary" id="createCourseBtn">Create New Course</button>
+                
+                <div class="course-list" id="instructorCourses">
+                    <!-- Courses will be loaded dynamically -->
+                </div>
+            </div>
+            
+            <div class="tab-content" id="create-course">
+                <h3>Create New Course</h3>
+                <form id="courseForm">
+                    <div class="form-group">
+                        <label for="courseTitle">Course Title</label>
+                        <input type="text" id="courseTitle" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="courseCategory">Category</label>
+                        <select id="courseCategory" required>
+                            <option value="programming">Programming</option>
+                            <option value="design">Design</option>
+                            <option value="business">Business</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="courseDescription">Description</label>
+                        <textarea id="courseDescription" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Course</button>
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Neusoft Academy. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/instructor.js"></script>
+</body>
+</html>
+<!-- In all protected pages -->
+<li><a href="#" id="logout">Logout</a></li>
