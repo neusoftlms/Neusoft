@@ -53,3 +53,29 @@ document.addEventListener('DOMContentLoaded', function() {
     
     checkAuth();
 });
+// Add this to your auth.js file
+function setupLogout() {
+    const logoutButtons = document.querySelectorAll('#logout');
+    
+    logoutButtons.forEach(button => {
+        button.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            // Clear authentication data
+            localStorage.removeItem('token');
+            localStorage.removeItem('user');
+            
+            // Redirect to login page
+            window.location.href = 'login.html';
+        });
+    });
+}
+
+// Call this function in your DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', function() {
+    // ... your existing code ...
+    
+    setupLogout();
+    
+    // ... rest of your code ...
+});
