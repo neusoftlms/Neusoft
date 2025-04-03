@@ -3,65 +3,51 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses | Neusoft LMS</title>
+    <title>Neusoft Academy - Courses</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">Neusoft</span> LMS</h1>
+            <div class="logo">
+                <h1>Neusoft Academy</h1>
             </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li class="current"><a href="courses.html">Courses</a></li>
-                    <li><a href="login.html">Login</a></li>
-                    <li><a href="register.html">Register</a></li>
+                    <li><a href="courses.html" class="active">Courses</a></li>
+                    <li><a href="dashboard.html">Dashboard</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="main">
+    <main class="course-catalog">
         <div class="container">
-            <article id="main-col">
-                <h1 class="page-title">Our Courses</h1>
-                <div class="course-categories">
-                    <button class="category-btn active" data-category="all">All Courses</button>
-                    <button class="category-btn" data-category="programming">Programming</button>
-                    <button class="category-btn" data-category="business">Business</button>
-                    <button class="category-btn" data-category="design">Design</button>
-                </div>
-                
-                <div id="course-list" class="course-list">
-                    <!-- Courses will be loaded here via JavaScript -->
-                </div>
-            </article>
-
-            <aside id="sidebar">
-                <div class="dark">
-                    <h3>Find Your Course</h3>
-                    <form class="course-search">
-                        <input type="text" placeholder="Search courses...">
-                        <button type="submit" class="button_1">Search</button>
-                    </form>
-                    <h3>Filter By</h3>
-                    <div class="filter-options">
-                        <label><input type="checkbox" name="filter" value="beginner"> Beginner</label>
-                        <label><input type="checkbox" name="filter" value="intermediate"> Intermediate</label>
-                        <label><input type="checkbox" name="filter" value="advanced"> Advanced</label>
-                    </div>
-                </div>
-            </aside>
+            <h2>Course Catalog</h2>
+            
+            <div class="category-filter">
+                <button class="btn btn-small active" data-category="all">All</button>
+                <button class="btn btn-small" data-category="programming">Programming</button>
+                <button class="btn btn-small" data-category="design">Design</button>
+                <button class="btn btn-small" data-category="business">Business</button>
+            </div>
+            
+            <div class="course-grid" id="courseList">
+                <!-- Courses will be loaded dynamically from API -->
+                <div class="loading">Loading courses...</div>
+            </div>
         </div>
-    </section>
+    </main>
 
     <footer>
-        <p>Neusoft Learning Management System, Copyright &copy; 2023</p>
+        <div class="container">
+            <p>&copy; 2023 Neusoft Academy. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="js/courses.js"></script>
+    <script src="js/student.js"></script>
 </body>
 </html>
