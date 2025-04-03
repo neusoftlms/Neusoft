@@ -3,138 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Panel | EduLMS</title>
+    <title>Neusoft Academy - Admin Panel</title>
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/admin.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <div id="branding">
-                <h1><span class="highlight">Edu</span>LMS</h1>
+            <div class="logo">
+                <h1>Neusoft Academy</h1>
             </div>
             <nav>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="courses.html">Courses</a></li>
-                    <li class="current"><a href="admin.html">Admin</a></li>
-                    <li><a href="#" id="logout-btn">Logout</a></li>
+                    <li><a href="admin.html" class="active">Admin Panel</a></li>
+                    <li><a href="#" id="logout">Logout</a></li>
                 </ul>
             </nav>
         </div>
     </header>
 
-    <section id="main">
+    <main class="admin-panel">
         <div class="container">
-            <article id="main-col">
-                <h1 class="page-title">Admin Dashboard</h1>
+            <h2>Admin Dashboard</h2>
+            
+            <div class="admin-tabs">
+                <button class="tab-btn active" data-tab="users">User Management</button>
+                <button class="tab-btn" data-tab="courses">Course Management</button>
+                <button class="tab-btn" data-tab="reports">Reports</button>
+            </div>
+            
+            <div class="tab-content active" id="users">
+                <h3>User Management</h3>
+                <button class="btn btn-primary" id="addUserBtn">Add New User</button>
                 
-                <div class="admin-section">
-                    <h2>System Overview</h2>
-                    <div class="stats-grid">
-                        <div class="stat-card">
-                            <h3>Total Users</h3>
-                            <p id="total-users">0</p>
-                        </div>
-                        <div class="stat-card">
-                            <h3>Total Courses</h3>
-                            <p id="total-courses">0</p>
-                        </div>
-                        <div class="stat-card">
-                            <h3>Active Enrollments</h3>
-                            <p id="total-enrollments">0</p>
-                        </div>
-                        <div class="stat-card">
-                            <h3>Instructors</h3>
-                            <p id="total-instructors">0</p>
-                        </div>
-                    </div>
-                </div>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>John Doe</td>
+                            <td>john@example.com</td>
+                            <td>Student</td>
+                            <td>
+                                <button class="btn btn-small">Edit</button>
+                                <button class="btn btn-small btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- More users would go here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="tab-content" id="courses">
+                <h3>Course Management</h3>
+                <button class="btn btn-primary" id="addCourseBtn">Add New Course</button>
                 
-                <div class="admin-section">
-                    <h2>User Management</h2>
-                    <div class="admin-actions">
-                        <button id="add-user-btn" class="button_1">Add New User</button>
-                        <button id="export-users-btn" class="button_2">Export Users</button>
-                    </div>
-                    <div id="users-table" class="admin-table">
-                        <!-- Users table will be loaded here -->
-                    </div>
-                </div>
-                
-                <div class="admin-section">
-                    <h2>Course Management</h2>
-                    <div class="admin-actions">
-                        <button id="add-course-btn" class="button_1">Add New Course</button>
-                        <button id="import-courses-btn" class="button_2">Import Courses</button>
-                    </div>
-                    <div id="courses-table" class="admin-table">
-                        <!-- Courses table will be loaded here -->
-                    </div>
-                </div>
-            </article>
-
-            <aside id="sidebar">
-                <div class="dark">
-                    <h3>Quick Actions</h3>
-                    <ul class="quick-actions">
-                        <li><a href="#" id="send-announcement">Send Announcement</a></li>
-                        <li><a href="#" id="view-reports">View Reports</a></li>
-                        <li><a href="#" id="system-settings">System Settings</a></li>
-                    </ul>
-                    
-                    <h3>Recent Activity</h3>
-                    <div id="admin-activity" class="activity-feed">
-                        <!-- Admin activity feed will be loaded here -->
-                    </div>
-                </div>
-            </aside>
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Course Name</th>
+                            <th>Instructor</th>
+                            <th>Enrollments</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>101</td>
+                            <td>Introduction to Programming</td>
+                            <td>Jane Smith</td>
+                            <td>45</td>
+                            <td>
+                                <button class="btn btn-small">Edit</button>
+                                <button class="btn btn-small btn-danger">Delete</button>
+                            </td>
+                        </tr>
+                        <!-- More courses would go here -->
+                    </tbody>
+                </table>
+            </div>
         </div>
-    </section>
-
-    <!-- Add User Modal -->
-    <div id="user-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Add New User</h2>
-            <form id="user-form">
-                <div class="form-group">
-                    <label for="user-role">Role:</label>
-                    <select id="user-role" required>
-                        <option value="student">Student</option>
-                        <option value="instructor">Instructor</option>
-                        <option value="admin">Admin</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="user-name">Full Name:</label>
-                    <input type="text" id="user-name" required>
-                </div>
-                <div class="form-group">
-                    <label for="user-email">Email:</label>
-                    <input type="email" id="user-email" required>
-                </div>
-                <div class="form-group">
-                    <label for="user-password">Password:</label>
-                    <input type="password" id="user-password" required>
-                </div>
-                <button type="submit" class="button_1">Create User</button>
-            </form>
-        </div>
-    </div>
+    </main>
 
     <footer>
-        <p>EduLMS Learning Management System, Copyright &copy; 2023</p>
+        <div class="container">
+            <p>&copy; 2023 Neusoft Academy. All rights reserved.</p>
+        </div>
     </footer>
 
-    <script src="js/auth.js"></script>
     <script src="js/admin.js"></script>
 </body>
 </html>
-<!-- Change this in header -->
-<div id="branding">
-    <h1><span class="highlight">Neusoft</span> LMS</h1>
-</div>
-
-<!-- Change this in footer -->
-<p>Neusoft Learning Management System, Copyright &copy; 2023</p>
